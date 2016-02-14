@@ -1,7 +1,7 @@
 # Mantis
 
-Mantis is a free realtime data dashboards for businesses build with [Node.js](https://nodejs.org),
-[AngularJS](https://angularjs.org/) and [Bootstrap](http://getbootstrap.com/).
+Mantis is a free realtime data dashboards for businesses build with [Node.js](https://nodejs.org), [MongoDB](https://www.mongodb.org/),
+[ExpressJS](http://expressjs.com/), [AngularJS](https://angularjs.org/), [Bootstrap](http://getbootstrap.com/).
 
 The idea of building mantis came out of the need to monitor all business data from one place.
 Currently Mantis is compatible with [Google Chrome](https://www.google.it/chrome/browser/desktop/), [Firefox](https://www.mozilla.org/it/firefox/new/) and [Safari](https://www.apple.com/it/safari/).
