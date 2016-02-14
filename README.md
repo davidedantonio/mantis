@@ -6,8 +6,6 @@ Mantis is a free realtime data dashboards for businesses build with [Node.js](ht
 The idea of building mantis came out of the need to monitor all business data from one place.
 Currently Mantis is compatible with [Google Chrome](https://www.google.it/chrome/browser/desktop/), [Firefox](https://www.mozilla.org/it/firefox/new/) and [Safari](https://www.apple.com/it/safari/).
 
-Mantis: Realtime data dashboards for businesses
-
 ## Features
 
 - It's free
@@ -154,7 +152,7 @@ Json sample data that a widget expect
 
 ### Current Implementation
 
-- Reponsive
+- Reponsiveness
 - Email integration
 
 ### Future Implementation
@@ -169,9 +167,10 @@ Json sample data that a widget expect
 - Multiple themes
 
 ## Screenshot
-![image](https://github.com/davidedantonio/mantis/blob/master/schreenshot/mantis-logo.jpg)
-![image](https://github.com/davidedantonio/mantis/blob/master/schreenshot/screen2.png)
-![image](https://github.com/davidedantonio/mantis/blob/master/schreenshot/screen1.png)
+![image](https://raw.githubusercontent.com/davidedantonio/mantis/master/schreenshots/mantis-logo.jpg)
+![image](https://raw.githubusercontent.com/davidedantonio/mantis/master/schreenshots/screen1.png)
+![image](https://raw.githubusercontent.com/davidedantonio/mantis/master/schreenshots/screen2.png)
+![image](https://raw.githubusercontent.com/davidedantonio/mantis/master/schreenshots/screen3.png)
 
 
 ## Creator
