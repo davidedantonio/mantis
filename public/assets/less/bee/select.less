@@ -1,0 +1,42 @@
+//
+// Select
+// --------------------------------------------------
+
+
+// Select container
+.select {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  min-width: 220px;
+  width: auto;
+
+  &.select-small {
+    min-width: 100px;
+  }
+
+  > .btn{
+    width: 100%;
+    padding-right: 30px;
+
+    > .caret {
+      position: absolute;
+      right: 10px;
+      top: 16px;
+    }
+  }
+
+  .form-group & {
+    width: 100%;
+
+    > .select2-choice {
+      width: 100%;
+    }
+  }
+  &.form-control {
+    border: none;
+    padding: 0;
+    height: auto;
+  }
+}
+

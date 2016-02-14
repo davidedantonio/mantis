@@ -1,0 +1,120 @@
+body{
+  font-family: "Raleway","Helvetica Neue","Helvetica","Arial",sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  background-color: #31363e;
+  background-repeat: repeat;
+  background-image: url("../images/background.png");
+  -webkit-background-size: 1em;
+  -moz-background-size: 1em;
+  -ms-background-size: 1em;
+  background-size: 1em;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+}
+
+.copyright{
+  position: absolute;
+  left: 0;
+  bottom: .5em;
+  width: 50%;
+  margin: 0 25%;
+  vertical-align: middle;
+  font-size: .6em;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.2);
+}
+
+.c3 text {
+  color: #fff;
+}
+
+.content{
+  padding-top: 58px;
+  padding-right: 4px;
+  padding-bottom: 14px;
+  padding-left: 4px;
+  //margin-left: 50px;
+}
+
+.navbar-right{
+  margin-right: 15px;
+}
+
+//On load page
+.fade {
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-transition: opacity .3s linear;
+  transition: opacity .3s linear;
+
+  &.in {
+    filter: alpha(opacity=100);
+  }
+}
+
+.animated {
+  animation-duration: .6s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+#page-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: #1d2025;
+  opacity: 0.8;
+  z-index: 1000;
+}
+#page-loader.fade {
+  display: none;
+}
+#page-loader.fade.in {
+  display: block;
+}
+
+.ui-resizable-handle {
+  height:5px;
+
+  background-color:#0F0;
+}
+
+//TEST
+.chart {
+  position: relative;
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.chart canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.percent {
+  z-index: 2;
+  display: inline-block;
+  line-height: 193px;
+  font-size: 50px;
+  font-weight: bold;
+}
+.percent:after {
+  content: '%';
+  margin-left: 0.1em;
+  font-size: .8em;
+}

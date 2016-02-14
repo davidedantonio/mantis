@@ -1,0 +1,33 @@
+// Hover/Focus state
+.dropdown-menu > li > a {
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    color: @dropdown-link-hover-color;
+    background-color: @dropdown-link-hover-bg;
+    -webkit-transition: all 450ms;
+    -moz-transition: all 450ms;
+    -ms-transition: all 450ms;
+    transition: all 450ms;
+  }
+}
+
+.dropdown-primary{
+  .dropdown-variant(@brand-primary; #fff);
+}
+
+.dropdown-success{
+  .dropdown-variant(@brand-success; #fff);
+}
+
+.dropdown-info{
+  .dropdown-variant(@brand-info; #fff);
+}
+
+.dropdown-warning{
+  .dropdown-variant(@brand-warning; #fff);
+}
+
+.dropdown-danger{
+  .dropdown-variant(@brand-danger; #fff);
+}

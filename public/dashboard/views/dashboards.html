@@ -1,0 +1,102 @@
+<div id="content" class="content" ng-controller="DashboardController" data-ng-init="init()">
+  <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+    <div class="panel-add" ng-click="modalCreateDashboard('sm')">
+      <div class="add-dashboard-info">
+        <i class="fa fa-plus-square-o fa-3x"></i>
+        New Dashboard
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" ng-repeat="dashboard in dashboards" ng-animate="{enter: 'animate-enter', leave: 'animate-leave'}">
+    <div class="panel panel-default panel-dashboards">
+        <div class="panel-heading">
+          <div class="panel-actions pull-right panel-actions-reveal">
+            <span class="panel-actions-reveal-hide animated fadeInRight">
+              <span class="panel-action" ng-click="modalDeleteDashboard(dashboard._id)">
+                <i class="fa fa-trash"></i>
+              </span>
+            </span>
+            &nbsp;&nbsp;
+            <i class="fa fa-bars panel-actions-reveal-icon"></i>
+          </div>
+          <i class="{{ dashboard.icon ? dashboard.icon : 'fa fa-dashboard' }}"></i>
+        </div>
+        <div ng-cloak class="panel-body text-left" ng-click="goToDashboard(dashboard._id)">
+          <p>
+            <strong>{{ dashboard.name }}</strong>
+          </p>
+          <p>
+            {{ dashboard.description }}
+          </p>
+        </div>
+    </div>
+  </div>
+
+  <script type="text/ng-template" id="createDashboardContent.html">
+    <form class="form-create-dashboard" role="form" name="dashboardCreateForm" ng-submit="submit()" novalidate>
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" data-ng-click="cancel($event)">
+          <span aria-hidden="true">&times;</span>
+          <span class="sr-only">Close</span>
+        </button>
+        <h4 class="modal-title">{{ title }}</h4>
+      </div>
+      <div class="modal-body">
+          <div class="row">
+              <input type="text" placeholder="Name..." class="form-control" name="dashboardName" ng-model="dashboardName" ng-minlength="2" ng-maxlength="20" required />
+          </div>
+          <div class="row">
+              <div ng-messages="dashboardCreateForm.dashboardName.$error" ng-if="interacted(dashboardCreateForm.dashboardName)">
+                <div ng-show="dashboardCreateForm.dashboardName.$error.required" class="error-messages">You forgot to enter name...</div>
+
+                <!-- then, incase the message is too short, show the message right after -->
+                <div ng-show="dashboardCreateForm.dashboardName.$error.minlength" class="error-messages">Your dashboard name is too short...</div>
+
+                <!-- of if is too long then let us know -->
+                <div ng-show="dashboardCreateForm.dashboardName.$error.maxlength" class="error-messages">Your dashboard name is too long...</div>
+              </div>
+          </div>
+          <div class="row">
+            <input type="number" placeholder="Columns..." class="form-control" name="columns" ng-model="columns" min="1" max="10" />
+          </div>
+          <div class="row" data-ng-controller="DropdownIcons">
+            <div class="dropdown dropdown-modal-icons" dropdown on-toggle="toggled(open,$event)">
+              <a href="#" class="dropdown-toggle btn btn-default btn-block" dropdown-toggle>
+                <i class="{{ icon }}"></i> {{ label }} <i class="pull-right fa fa-caret-down"></i>
+              </a>
+              <ul class="dropdown-menu max-height-dropdown">
+                <li ng-repeat="choice in icons">
+                  <a href="#/" ng-click="setIcon(choice)"><i class="{{ choice }} pull-right"></i> {{ choice }}</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="row">
+              <textarea placeholder="Short Description here..." class="form-control" rows="6" name="dashboardDescription" ng-model="dashboardDescription" ></textarea>
+          </div>
+          <div class="row">
+            <button type="button" class="btn btn-50 btn-danger" ng-click="cancel($event)"><i class="fa fa-times-circle fa-2x"></i></button>
+            <button type="submit" class="btn btn-50 btn-primary" ng-click="ok($event)"><i class="fa fa-check-circle fa-2x"></i></button>
+          </div>
+      </div>
+    </form>
+  </script>
+  <script type="text/ng-template" id="modalDeleteDashboard.html">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" data-ng-click="cancel($event)">
+          <span aria-hidden="true">&times;</span>
+          <span class="sr-only">Close</span>
+        </button>
+        <h4 class="modal-title">Delete Dashboard</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+            <h3 class="text-center text-danger">Really you want to delete the dashboard?</h3><br><br>
+        </div>
+        <div class="row">
+          <button type="button" class="btn btn-50 btn-primary" ng-click="cancel($event)"><i class="fa fa-times-circle fa-2x"></i></button>
+          <button type="submit" class="btn btn-50 btn-danger" ng-click="deleteDashboard($event)"><i class="fa fa-check-circle fa-2x"></i></button>
+        </div>
+      </div>
+  </script>
+</div>

@@ -1,0 +1,9 @@
+.dropdown-variant(@hover-bg-color; @color) {
+  & > li > a {
+    &:hover,
+    &:focus {
+      color: @color;
+      background-color: @hover-bg-color;
+    }
+  }
+}

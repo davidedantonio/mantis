@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Mantis</title>
+		<!-- Viewport mobile tag for sensible mobile support -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link rel="stylesheet" href="./assets/css/bootstrap.css">
+	</head>
+	<body ng-app="MantisApplication">
+    <div id='page-container' ng-controller="UsersController">
+      <div class="panel panel-default login-panel">
+        <div class="panel-body text-center">
+            <header>
+                <img src="../assets/images/mantis_logo.png" />
+                <h2>Signup</h2>
+            </header>
+            <form class="form-singup" role="form" name="userSignUpForm" action="/signup" method="post">
+              <div class="row">
+                  <input class="form-control" type="text" name="name" ng-model="user.name" placeholder="name..." ng-minlength="3" ng-maxlength="30" required />
+              </div>
+              <div class="row">
+                  <input class="form-control" type="text" name="surname" ng-model="user.surname" placeholder="surname..." ng-minlength="3" ng-maxlength="30" required />
+              </div>
+              <div class="row">
+                  <input class="form-control" type="email" name="email" ng-model="user.email" placeholder="email..." ng-minlength="5" ng-maxlength="30" required />
+              </div>
+              <div class="row">
+                  <input type="password" name="password" ng-model="user.password" placeholder="password..." class="form-control" required />
+              </div>
+							<!-- Display flash messages  -->
+							<% for(var i in messages) { %>
+							   <div class="error-messages"><%= messages[i] %></div>
+							<% } %>
+              <div class="row">
+                  <button type="submit" class="btn btn-info btn-block">SIGNUP</button>
+                  <a href="/signin" class="btn btn-warning btn-block">LOGIN</a>
+              </div>
+            </form>
+        </div>
+      </div>
+      <footer class="copyright">
+          Crafted with <i class="fa fa-heart"></i> by Deid
+      </footer>
+    </div>
+  </div>
+
+	<script src="./assets/js/dependencies/underscore.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-route.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-resource.js"></script>
+
+	<script src="./assets/js/dependencies/jquery.min.js"></script>
+  <script src="./assets/js/libraries/bootstrap.min.js"></script>
+	<script src="./assets/js/dependencies/angular-gridster.min.js"></script>
+	<script src="./assets/js/dependencies/angular-cookies.js"></script>
+  <script src="./assets/js/dependencies/angular-messages.min.js"></script>
+	<script src="https://cdn.socket.io/socket.io-1.3.7.js"></script>
+  <script src="./assets/js/dependencies/angular-socket-io.js"></script>
+  <!--<script src="./javascripts/dependencies/angular-toastr.min.js"></script>-->
+  <script src="./assets/js/dependencies/compareTo.module.js"></script>
+  <script src="./assets/js/dependencies/highcharts-ng.min.js"></script>
+  <script src="./assets/js/dependencies/jquery.easing.min.js"></script>
+	<script src="./assets/js/dependencies/angular-messages.min.js"></script>
+  <script src="./assets/js/libraries/growl/angular-growl.min.js"></script>
+  <script src="./assets/js/libraries/highcharts/highcharts.js"></script>
+  <script src="./assets/js/libraries/highcharts/highcharts-more.js"></script>
+  <script src="./assets/js/libraries/highcharts/solid-gauge.js"></script>
+  <script src="./assets/js/libraries/highcharts/dark-unica.js"></script>
+  <script src="./assets/js/libraries/jquery-ui/ui/minified/jquery-ui.min.js"></script>
+  <script src="./assets/js/libraries/respond/respond.min.js"></script>
+  <script src="./assets/js/libraries/slimscroll/jquery.slimscroll.min.js"></script>
+
+	<script src="./application.js"></script>
+  <!-- Load the users module -->
+  <script src="./users/controllers/UsersController.js"></script>
+
+
+	</body>
+</html>
